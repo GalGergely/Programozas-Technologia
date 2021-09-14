@@ -21,6 +21,7 @@ public class GameFrame extends JFrame implements ActionListener {
         resetButton = new JButton();
         resetButton.setText("Reset");
         resetButton.setSize(100, 50);
+        resetButton.setFocusable(false);
         resetButton.setLocation(0, 200);
         resetButton.addActionListener(this);
         game = new Game();
