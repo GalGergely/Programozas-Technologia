@@ -17,6 +17,7 @@ public class GameFrame extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(715, 640);
         this.setLayout(null);
+        this.setTitle("Snake Game by Neyoo");
         resetButton = new JButton();
         resetButton.setText("Reset");
         resetButton.setSize(100, 50);

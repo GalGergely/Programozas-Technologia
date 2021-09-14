@@ -73,12 +73,12 @@ public class Game extends JPanel implements ActionListener {
 
     public void draw(Graphics g) {
         if (running) {
-            g.setColor(Color.gray);
+            /*g.setColor(Color.gray);
             g.setPaintMode();
             for (int i = 0; i < GAME_HEIGHT / UNIT_SIZE; i++) {
                 g.drawLine(i * UNIT_SIZE, 0, i * UNIT_SIZE, GAME_HEIGHT);
                 g.drawLine(0, i * UNIT_SIZE, GAME_WIDTH, i * UNIT_SIZE);
-            }
+            }*/
             g.setColor(Color.RED);
             g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
             for (int i = 0; i < bodyParts; i++) {
