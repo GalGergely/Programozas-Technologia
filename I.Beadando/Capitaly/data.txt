@@ -1,0 +1,12 @@
+5
+S 500
+S 1500
+S 1000
+P
+L 500
+5
+G Gergo
+C Mark
+C Bence
+T Balint
+G Akos

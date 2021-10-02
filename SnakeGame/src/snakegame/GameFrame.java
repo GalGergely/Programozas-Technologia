@@ -8,34 +8,21 @@ package snakegame;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class GameFrame extends JFrame implements ActionListener {
+public class GameFrame extends JFrame{
 
     Game game;
     JButton resetButton;
+    JButton toplist;
 
     GameFrame() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(715, 640);
+        this.setSize(600, 600);
         this.setLayout(null);
         this.setTitle("Snake Game by Neyoo");
-        resetButton = new JButton();
-        resetButton.setText("Reset");
-        resetButton.setSize(100, 50);
-        resetButton.setFocusable(false);
-        resetButton.setLocation(0, 200);
-        resetButton.addActionListener(this);
         game = new Game();
-        this.add(resetButton);
         this.add(game);
         this.setVisible(true);
-    }
+        
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == resetButton) {
-            this.remove(game);
-            game = new Game();
-            this.add(game);
-        }
     }
 }

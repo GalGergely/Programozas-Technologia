@@ -53,9 +53,8 @@ public class Game extends JPanel implements ActionListener {
         this.setBackground(Color.DARK_GRAY);
         this.setFocusable(true);
         this.addKeyListener(new Game.MyKeyAdapter());
+        this.setSize(700, 700);
         startGame();
-        this.setSize(600, 600);
-        this.setLocation(100, 0);
 
     }
 
@@ -73,12 +72,12 @@ public class Game extends JPanel implements ActionListener {
 
     public void draw(Graphics g) {
         if (running) {
-            /*g.setColor(Color.gray);
+            g.setColor(Color.gray);
             g.setPaintMode();
             for (int i = 0; i < GAME_HEIGHT / UNIT_SIZE; i++) {
                 g.drawLine(i * UNIT_SIZE, 0, i * UNIT_SIZE, GAME_HEIGHT);
                 g.drawLine(0, i * UNIT_SIZE, GAME_WIDTH, i * UNIT_SIZE);
-            }*/
+            }
             g.setColor(Color.RED);
             g.fillOval(appleX, appleY, UNIT_SIZE, UNIT_SIZE);
             for (int i = 0; i < bodyParts; i++) {
@@ -170,6 +169,7 @@ public class Game extends JPanel implements ActionListener {
         g.setFont(retroFont1);
         FontMetrics metrics2 = getFontMetrics(g.getFont());
         g.drawString("Game Over", (GAME_WIDTH - metrics2.stringWidth("Game Over")) / 2, 300);
+        new MainMenu();
     }
 
     @Override
