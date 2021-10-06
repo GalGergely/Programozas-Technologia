@@ -9,7 +9,7 @@ package capitaly;
  *
  * @author Greg
  */
-public class Player {
+abstract class Player {
     String name;
     char strategy;
     int money;

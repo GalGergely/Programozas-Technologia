@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         Capitaly game = new Capitaly();
         try {
-            game.read("data.txt");
+            game.read("data1.txt");
         } catch (FileNotFoundException ex) {
             System.out.println("File not found!");
             System.exit(-1);

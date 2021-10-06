@@ -15,7 +15,7 @@ abstract class BoardPieces {
 
     char type;
     int price;
-    
+
     public BoardPieces(char type, int price) {
         this.type = type;
         this.price = price;

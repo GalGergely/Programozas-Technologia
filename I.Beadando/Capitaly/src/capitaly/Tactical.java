@@ -16,11 +16,17 @@ public class Tactical extends Player {
     public Tactical(String name) {
         super(name,'T');
     }
-
+    /**
+     * 
+     * @return if he bought in the privious rond or not
+     */
     public boolean getBought() {
         return bought;
     }
-
+     /**
+     * 
+     * you can set if he bought in the privious rond or not
+     */
     public void setBought(boolean bought) {
         this.bought = bought;
     }
