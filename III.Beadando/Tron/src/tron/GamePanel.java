@@ -17,7 +17,7 @@ import java.util.Random;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-public class Game extends JPanel implements ActionListener {
+public class GamePanel extends JPanel implements ActionListener {
 
     static final int GAME_WIDTH = 600;
     static final int GAME_HEIGHT = 600;
@@ -37,22 +37,11 @@ public class Game extends JPanel implements ActionListener {
     Font retroFont1;
     Font retroFont2;
 
-    Game() {
-        try {
-
-            retroFont1 = Font.createFont(Font.TRUETYPE_FONT, new File("src/retro.ttf")).deriveFont(120f);
-            GraphicsEnvironment ge1 = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge1.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/retro.ttf")));
-            retroFont2 = Font.createFont(Font.TRUETYPE_FONT, new File("src/retro.ttf")).deriveFont(50f);
-            GraphicsEnvironment ge2 = GraphicsEnvironment.getLocalGraphicsEnvironment();
-            ge2.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/retro.ttf")));
-        } catch (IOException | FontFormatException e) {
-
-        }
+    GamePanel() {
         random = new Random();
         this.setBackground(Color.DARK_GRAY);
         this.setFocusable(true);
-        this.addKeyListener(new Game.MyKeyAdapter());
+        this.addKeyListener(new GamePanel.MyKeyAdapter());
         this.setSize(700, 700);
         startGame();
 
@@ -91,10 +80,6 @@ public class Game extends JPanel implements ActionListener {
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 }
             }
-            g.setColor(Color.red);
-            g.setFont(retroFont2);
-            FontMetrics metrics = getFontMetrics(g.getFont());
-            g.drawString("Score    " + applesEaten, (GAME_WIDTH - metrics.stringWidth("Score " + applesEaten)) / 2, 50);
         } else {
             gameOver(g);
         }
@@ -156,17 +141,7 @@ public class Game extends JPanel implements ActionListener {
     }
 
     public void gameOver(Graphics g) {
-
-        g.setColor(Color.red);
-        g.setFont(retroFont2);
-        FontMetrics metrics1 = getFontMetrics(g.getFont());
-        g.drawString("Score   " + applesEaten, (GAME_WIDTH - metrics1.stringWidth("Score: " + applesEaten)) / 2, 100);
-
-        g.setColor(Color.red);
-        g.setFont(retroFont1);
-        FontMetrics metrics2 = getFontMetrics(g.getFont());
-        g.drawString("Game Over", (GAME_WIDTH - metrics2.stringWidth("Game Over")) / 2, 300);
-        new MainMenu();
+        
     }
 
     @Override
